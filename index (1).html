@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Wizard - Dictionary App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="wizard-icon">🧙‍♂️</span>
+                Word Wizard
+            </h1>
+            <p class="subtitle">Turn any word into wisdom</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Enter a word to discover its meaning..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <span class="search-icon">🔍</span>
+                    Search
+                </button>
+            </div>
+        </div>
+
+        <div id="loadingState" class="loading hidden">
+            <div class="loading-spinner"></div>
+            <p>Searching for wisdom...</p>
+        </div>
+
+        <div id="errorState" class="error hidden">
+            <div class="error-icon">❌</div>
+            <h3>Word Not Found</h3>
+            <p id="errorMessage">Sorry, we couldn't find that word. Please check your spelling and try again.</p>
+        </div>
+
+        <div id="resultsContainer" class="results-container hidden">
+            <div class="word-header">
+                <h2 id="wordTitle" class="word-title"></h2>
+                <div id="phonetics" class="phonetics"></div>
+            </div>
+            
+            <div id="meanings" class="meanings"></div>
+        </div>
+
+        <footer class="footer">
+            <p>Powered by <a href="https://dictionaryapi.dev/" target="_blank">Free Dictionary API</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
